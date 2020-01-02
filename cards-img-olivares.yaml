@@ -82,7 +82,7 @@ form:
         .showthiscard:
           type: input.checkbox
           label: Enabled
-          description: Show this card.
+          description: Define if this card is showed (rendered) .
           default: true
           
         .icon:
