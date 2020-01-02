@@ -1,0 +1,50 @@
+{% extends '@nucleus/partials/particle.html.twig' %}
+{% block particle %}
+
+<div class="uk-container">
+	{% if particle.title %}
+		<div class="g-grid">
+			<div class="g-block size-100 {{ particle.title_css }}">
+				<{{ particle.titlehx|raw }} class="g-title">{{ particle.title|raw }}</{{ particle.titlehx|raw }}>
+			</div>
+		</div>
+	{% endif %}
+    <div class="uk-child-width-1-{{particle.cardcount|default('4')}}@m uk-grid-match uk-grid" uk-grid="">
+    {% for item in particle.items %}
+    	{% if loop.first %}	
+        	<div class="uk-first-column">
+        {% else %}
+        	<div>		
+        {% endif %}
+        
+            {% if item.showthiscard == true %}	
+                <div class="uk-card uk-card-{{item.cardtype|default('default')}} uk-card-hover">
+                    <div class="uk-card-badge">{{item.textbadge|e}}</div>
+                    <div class="uk-card-body {{item.cardbodypadding|e}}">
+                        {% if item.textcardheader %}
+                            <h3 class="uk-card-title">{{item.textcardheader|raw}}</h3>
+                        {% endif %}	
+                        <a target="{{ item.target|default('_parent')|e }}" href="{{ item.link|e }}">
+                            <div class="uk-height-medium uk-flex uk-flex-center uk-flex-bottom uk-background-cover uk-light" data-src="{{ url(item.cardbodyimage)}}" uk-img>
+                                {% if item.textbuttonbody %}
+                                    <p uk-margin="">
+                                        <button class="uk-button {{item.buttontype|e}} uk-first-column" >{{item.textbuttonbody|e}}{% if item.buttonicon %}<span class="{{item.buttonicon|e}}"></span>{% endif %}	
+                                        </button>
+                                    </p>
+                                {% endif %}    
+                            </div>
+                        </a>    
+                    </div>
+                    {% if item.textfooter %}
+                        <div class="uk-card-footer {{item.textfooteralign|e}} ">
+                            <a target="{{ item.target|default('_parent')|e }}" href="{{ item.link|e }}" class="uk-button uk-button-text">{{ item.textfooter|raw}}</a>
+                        </div>
+                    {% endif %}
+                </div>
+            {% endif %}
+        </div>
+    {% endfor %}    
+    </div>
+</div>
+
+{% endblock %}

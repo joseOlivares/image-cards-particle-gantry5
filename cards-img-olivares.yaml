@@ -1,0 +1,198 @@
+name: CardsImages-Olivares
+description: UIkit3 Cards with images, by Jose Luis Olivares (https://sv.linkedin.com/in/jolivaress). 
+type: particle
+icon: fa-th-large
+
+configuration:
+  caching:
+    type: static
+
+form:
+  fields:
+    enabled:
+      type: input.checkbox
+      label: Enabled
+      description: Globally enable particles.
+      default: true
+
+    css.class:
+      type: input.selectize
+      label: CSS Classes
+      description: CSS class name for the particle.
+      default: center
+
+    title:
+      type: input.text
+      label: Title
+      description: Customize the title text.
+      placeholder: Enter title 
+
+    titlehx:      
+      type:  select.select
+      label: Title Header Size
+      description: Select the <h> size
+      placeholder: 'Select...'
+      default: h1
+      options:
+          h1: Header 1
+          h2: Header 2
+          h3: Header 3
+
+    title_css:
+      type: input.selectize
+      label: Title CSS Classes
+      description: Customize the title CSS Classes.
+
+    target:
+      type: select.select
+      label: Target
+      description: Target browser window when item is clicked.
+      placeholder: 'Select...'
+      default: _parent
+      options:
+          _parent: Self
+          _blank: New Window
+
+    cardcount:      
+      type:  select.select
+      label: Card Items to show 
+      description: Select the number of card items to show per row
+      placeholder: 'Select...'
+      default: 4
+      options:
+          2: 2 cards
+          3: 3 cards
+          4: 4 cards
+
+    items:
+      type: collection.list
+      array: true
+      label: Cards 
+      description: Create each Card item to display.
+      value: name
+      ajax: true
+
+      fields:
+
+        .name:
+          type: input.text
+          label: Name
+          skip: true
+
+        .showthiscard:
+          type: input.checkbox
+          label: Enabled
+          description: Show this card.
+          default: true
+          
+        .icon:
+          type: input.icon
+          label: Icon
+
+        .textcardheader:
+          type: input.text
+          label: Card Text Header
+
+        .textbadge:
+          type: input.text
+          label: Card badge text (top right)                   
+
+        .txtheadersize:
+          type: select.select
+          label: Header size
+          description: Header font size.
+          placeholder: 'Select...'
+          default: medium
+          options:
+              small: Small
+              medium: Medium
+              large: Large 
+
+        .cardbodyimage:
+          type: input.imagepicker
+          label: Image
+          description: Select an image for the card body.
+
+        .cardbodypadding:
+          type: select.select
+          label: Card body padding
+          description: Select padding.
+          placeholder: 'Select...'
+          default: default
+          options:
+              default: default
+              uk-padding-remove: no padding all
+              uk-padding-remove-horizontal: remove horizontal
+              uk-padding-remove-vertical: remove vertical  
+              uk-padding-small: Small
+
+        .textbuttonbody:
+          type: input.text
+          label: Text button for card body
+          description: Type in the card body button text.
+          placeholder: 'Enter card body button Text'
+          default: 'Text'
+
+        .buttonicon:
+          type: input.icon
+          label: Icon to show right after button text.
+          description: icon to show right after button text.
+
+        .buttontype:
+          type: select.select
+          label: Button Type
+          description: Select button type.
+          placeholder: 'Select...'
+          default: default
+          options:
+              uk-button-default: default
+              uk-button-primary: primary
+              uk-button-secondary: secondary
+              uk-button-danger: danger  
+              uk-button-text: text
+              uk-button-link: link           
+
+        .textfooter:
+          type: input.text
+          label: Card footer text
+          description: Customize the card footer text.
+          placeholder: 'Enter card footer text'
+          default: '' 
+
+        .textfooteralign:
+          type: select.select
+          label: Footer text align
+          description: Select text align.
+          placeholder: 'Select...'
+          default: default
+          options:
+              uk-text-left: default
+              uk-text-center: center
+              uk-text-right: secondary
+              uk-text-justify: justify
+
+        .link:
+          type: input.text
+          label: Link
+          default: '#'
+
+        .target:
+          type: select.select
+          label: Link target
+          description: Target browser window when item is clicked.
+          placeholder: 'Select...'
+          default: _parent
+          options:
+              _parent: Self
+              _blank: New Window 
+
+        .cardtype:
+          type: select.select
+          label: Card Style
+          description: Select the card style.
+          placeholder: 'Select...'
+          default: default
+          options:
+            default: Default
+            primary: Primary
+            secondary: Secondary
