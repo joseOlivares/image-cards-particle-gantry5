@@ -17,7 +17,7 @@
         	<div>		
         {% endif %}
         
-            {% if item.showthiscard == true %}	
+            {% if item.showthiscard %}	
                 <div class="uk-card uk-card-{{item.cardtype|default('default')}} uk-card-hover">
                     <div class="uk-card-badge">{{item.textbadge|e}}</div>
                     <div class="uk-card-body {{item.cardbodypadding|e}}">
