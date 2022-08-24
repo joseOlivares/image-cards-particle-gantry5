@@ -25,7 +25,7 @@ You can see an example implemented in this website I made (https://iconnsv.com) 
 ## Particle on Gantry 5.3.2+
 ![gantry5-particle]( ./no-copy-imgs/agregar-particle.jpg?raw=true "Add particle")
 
-## Configiration
+## Configuration
 ![particle-configuration](./no-copy-imgs/configuracion-particle.jpg?raw=true "Particle configuration")
 
 ## Real example
