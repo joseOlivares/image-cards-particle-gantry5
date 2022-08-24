@@ -22,7 +22,9 @@ and/or  making a voluntary donation through Paypal https://paypal.me/joolivares 
         
             {% if item.showthiscard %}	
                 <div class="uk-card uk-card-{{item.cardtype|default('default')}} uk-card-hover">
-                    <div class="uk-card-badge">{{item.textbadge|e}}</div>
+                    {% if item.textbadge %} 
+                        <div class="uk-card-badge">{{item.textbadge|e}}</div>
+                    {% endif %}
                     <div class="uk-card-body {{item.cardbodypadding|e}}">
                         {% if item.textcardheader %}
                             <h3 class="uk-card-title">{{item.textcardheader|raw}}</h3>
